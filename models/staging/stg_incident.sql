@@ -1,7 +1,4 @@
-{{ config(
-    materialized='view',
-    schema='STAGING'
-) }}
+{{ config(materialized="view", schema="STAGING") }}
 
 select
     dwi_incident,
@@ -10,4 +7,4 @@ select
     incident_number,
     title,
     investigation_can_be_classified_as
-from {{ source('oilgas_staging', 'incident') }}
+from {{ source("oilgas_staging", "incident") }}

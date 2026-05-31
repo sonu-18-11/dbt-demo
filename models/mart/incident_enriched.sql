@@ -12,7 +12,8 @@ select
 
     l.dwi_location,
     l.location_name,
-    l.dwk_parent_location_location_name,
+    l.dwk_parent_location,
+    
 
     ps.process_safety_id,
     ps.spse_nomination_basis

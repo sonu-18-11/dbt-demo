@@ -5,6 +5,6 @@
 
 select
     dwi_location,
-    dwk_parent_location_location_name,
+    dwk_parent_location,
     location_name
 from {{ source('oilgas_staging', 'location') }}
