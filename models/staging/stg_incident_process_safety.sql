@@ -1,4 +1,7 @@
-{{ config(materialized='view') }}
+{{ config(
+    materialized='view',
+    schema='STAGING'
+) }}
 
 select
     dwk_incident,
