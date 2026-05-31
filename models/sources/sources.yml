@@ -1,0 +1,33 @@
+version: 2
+
+sources:
+  - name: oilgas_staging
+    database: DBT_DEMO
+    schema: STAGING
+    description: "Raw staging tables for Oil & Gas incident system"
+
+    tables:
+
+      - name: incident
+        description: "Incident master table from EHS system"
+        columns:
+          - name: dwi_incident
+            description: "Unique incident identifier"
+            tests:
+              - not_null
+          - name: incident_number
+            description: "Business incident number"
+
+      - name: incident_process_safety
+        description: "Process safety classification for incidents"
+        columns:
+          - name: dwk_incident
+            tests:
+              - not_null
+
+      - name: location
+        description: "Location master data for plants and assets"
+        columns:
+          - name: dwi_location
+            tests:
+              - not_null
